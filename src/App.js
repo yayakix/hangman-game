@@ -57,7 +57,7 @@ function App() {
 
   for (let i = 0; i < alphabet.length; i++) {
     buttons.push(
-      <button value={alphabet[i]} onClick={(event) => handleClickKey(event)}>
+      <button value={alphabet[i]} onClick={(event) => handleClickKey(event)} >
         {alphabet[i]}
       </button>
     );
@@ -67,9 +67,7 @@ function App() {
     <div className="App">
       <button onClick={handleClick}>New Game</button>
       <Word word={word} guess={guess}/>
-      {buttons}
-      {/* <Hungman word={word}/> */}
-      
+      {buttons}      
     </div>
   );
 }
