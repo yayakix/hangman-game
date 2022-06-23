@@ -1,5 +1,8 @@
+// generates a random word for the game
+import Game from "./Game";
 
 function Word(props) {
+    // array of selected word
     const wordArr = props.word.split('')
     const listItems = wordArr.map((letter, index) => (
       <li
@@ -11,7 +14,7 @@ function Word(props) {
     ));
 
     console.log(wordArr)
-    const wordspot = []
+    // const wordspot = []
     for (let i = 0; i < props.word.length; i++){
         console.log('space for word')
     }
@@ -23,6 +26,7 @@ function Word(props) {
   return (
     <div>
       <ul className="wordlist">{listItems}</ul>
+      <Game wordArr={wordArr} word={props.word} guess={props.guess} />
     </div>
   );
 }
