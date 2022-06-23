@@ -1,8 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import Word from "./components/Word";
-import Hungman from "./components/Hungman";
-import Game from "./components/Game";
 
 function App() {
   const [word, setWord] = useState("");
@@ -12,12 +10,9 @@ function App() {
     const response = await fetch("https://random-word-api.herokuapp.com/word");
     const data = await response.json();
     setWord(data[0]);
-    console.log(data[0]);
+    // console.log(data[0]);
   };
   const handleClick = () => {
-    // call api to get a word
-    // pass word to game component
-    // console.log("cliecked");
     getWord();
   };
 

@@ -39,12 +39,12 @@
 
 .wordlist{
      display: flex;
-    /* justify-content:space-around; */
+     justify-content: center;
     list-style-type:none;
 }
 .letter{
-  float: left;
-  padding-left: 30px;
+
+  padding: 0px 15px;
   text-decoration: underline;
 }
 
@@ -53,4 +53,8 @@
 }
 .show {
   visibility: visible;
+}
+.wordspot{
+  display: inline;
+  padding: 0px 10px;
 }
