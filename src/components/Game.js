@@ -7,11 +7,13 @@ function Game(props) {
     if (props.guess) {
       if (props.wordArr.includes(props.guess)) {
         console.log("letter is in word");
+
       } else {
         setLives(lives - 1);
       }
     }
   }, [props.guess]);
+  
 
   return <div>Lives left: {lives}
   <Hungman lives={lives}/>
