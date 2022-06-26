@@ -47,8 +47,15 @@ background-color: black;
   width: 300px;
 }
 .letterkey{
-    background-color: #9CB4CC;
+    background-color: #F6FBF4;
     padding: 5px 9px;
+    
+
+
+
+}
+.letterkey:hover{
+    background-color: #9CB4CC
     
 
 
@@ -60,4 +67,7 @@ background-color: black;
 }
 .newgamebtn:hover{
   background-color: #9CB4CC;
+}
+.blankarray{
+  margin-top: 20px;
 }

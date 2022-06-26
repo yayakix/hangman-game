@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import Game from "./Game";
-// how to show letters that were clicked on
-// if letter clicked on is in the wordarray, need to show it in correct order
 
 function Word(props) {
   const wordArr = props.word.split("");
@@ -12,6 +10,7 @@ function Word(props) {
   ));
   // create a blank array to populate
   const [prevGuesses, setPrevGuesses] = useState([])
+  
     useEffect(() => {
       if (!prevGuesses.includes(props.guess)){
 setPrevGuesses((prevState) => {
@@ -20,9 +19,7 @@ setPrevGuesses((prevState) => {
       }
     }, [props.guess]);
       useEffect(() => {
-      
       setPrevGuesses([])
-        
       }, [props.word]);
   const [blankArray, setBlankArray] = useState([]);
 
@@ -37,7 +34,6 @@ setPrevGuesses((prevState) => {
 
   useEffect(
     () => {
-      // console.log(props.guess);
       const indexes = []
       wordArr.forEach((element, index) => {
         // get index of current guess
@@ -50,7 +46,6 @@ setPrevGuesses((prevState) => {
         blankArrayCopy[index] = props.guess
       })
       setBlankArray(blankArrayCopy)
-      // console.log(indexes)
     },
     [props.guess]
   );
@@ -58,14 +53,17 @@ setPrevGuesses((prevState) => {
   return (
     <div>
       <ul className="wordlist">Hint: {listItems}</ul>
-      {blankArray}
-      <br/>
+      <div className="blankarray">{blankArray}</div>
+      <br />
       prev guesses:
       {prevGuesses}
-      {/* {wordspot.map((x) => (
-        <div className="wordspot">{x}</div>
-      ))} */}
-      <Game wordArr={wordArr} word={props.word} guess={props.guess} getWord={props.getWord}/>
+
+      <Game
+        wordArr={wordArr}
+        word={props.word}
+        guess={props.guess}
+        getWord={props.getWord}
+      />
     </div>
   );
 }

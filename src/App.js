@@ -10,7 +10,6 @@ function App() {
     const response = await fetch("https://random-word-api.herokuapp.com/word");
     const data = await response.json();
     setWord(data[0]);
-    // console.log(data[0]);
   };
   const handleClick = () => {
     getWord();
