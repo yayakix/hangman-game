@@ -11,6 +11,15 @@ function Word(props) {
     </li>
   ));
   // create a blank array to populate
+  const [prevGuesses, setPrevGuesses] = useState([])
+    useEffect(() => {
+      if (!prevGuesses.includes(props.guess)){
+setPrevGuesses((prevState) => {
+  return [...prevState, ` ${props.guess}`];
+});
+      }
+        
+    }, [props.guess]);
   const [blankArray, setBlankArray] = useState([]);
 
   useEffect(() => {
@@ -44,8 +53,11 @@ function Word(props) {
 
   return (
     <div>
-      <ul className="wordlist">{listItems}</ul>
+      {/* <ul className="wordlist">{listItems}</ul> */}
       {blankArray}
+      <br/>
+      prev guesses:
+      {prevGuesses}
       {/* {wordspot.map((x) => (
         <div className="wordspot">{x}</div>
       ))} */}
