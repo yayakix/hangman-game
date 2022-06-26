@@ -17,6 +17,11 @@ function Game(props) {
     useEffect(() => {
     setLives(10)
     }, [props.word]);
+     useEffect(() => {
+       if(lives < 0){
+         props.getWord()
+       }
+     }, [props.guess]);
   
 
   return <div>Lives left: {lives}

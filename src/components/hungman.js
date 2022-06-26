@@ -4,10 +4,7 @@ import { useState, useEffect } from "react";
 function Hungman(props) {
     const [man, setMan] = useState(null)
     const manPieces = ["O","|", "/","/"]
-    // const mandisplay = 
-    // for (let i = 0 ; i < man; i++){
 
-    // }
     useEffect(() => {
         setMan(10 - props.lives);
       }, [props.lives]);

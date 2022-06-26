@@ -18,7 +18,6 @@ setPrevGuesses((prevState) => {
   return [...prevState, ` ${props.guess},`];
 });
       }
-        
     }, [props.guess]);
       useEffect(() => {
       
@@ -66,7 +65,7 @@ setPrevGuesses((prevState) => {
       {/* {wordspot.map((x) => (
         <div className="wordspot">{x}</div>
       ))} */}
-      <Game wordArr={wordArr} word={props.word} guess={props.guess} />
+      <Game wordArr={wordArr} word={props.word} guess={props.guess} getWord={props.getWord}/>
     </div>
   );
 }

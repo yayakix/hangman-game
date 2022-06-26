@@ -52,7 +52,7 @@ function App() {
 
   for (let i = 0; i < alphabet.length; i++) {
     buttons.push(
-      <button value={alphabet[i]} onClick={(event) => handleClickKey(event)} >
+      <button className="letterkey" value={alphabet[i]} onClick={(event) => handleClickKey(event)} >
         {alphabet[i]}
       </button>
     );
@@ -60,9 +60,10 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={handleClick}>New Game</button>
+      <button className="newgamebtn" onClick={handleClick}>New Game</button>
+      <img className="image" src="https://media.istockphoto.com/photos/hangman-chalk-writing-on-old-grunge-chalkboard-background-with-space-picture-id1146252014?b=1&k=20&m=1146252014&s=612x612&w=0&h=f7OvaLMKIE9ZOCdM0jvUObPfQlH3W5azdZsrNJijEyk=" />
       <div className="characters">{buttons}</div>
-      <Word word={word} guess={guess} />
+      <Word word={word} guess={guess} getWord={getWord} />
     </div>
   );
 }
