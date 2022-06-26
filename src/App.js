@@ -18,32 +18,32 @@ function App() {
 
   // keyboard section to input a guess
   const alphabet = [
-    "a",
-    "b",
-    "c",
-    "d",
+    "q",
+    "w",
     "e",
+    "r",
+    "t",
+    "y",
+    "u",
+    "i",
+    "o",
+    "p",
+    "a",
+    "s",
+    "d",
     "f",
     "g",
     "h",
-    "i",
     "j",
     "k",
     "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
     "z",
+    "x",
+    "c",
+    "v",
+    "b",
+    "n",
+    "m",
   ];
   const buttons = [];
   const handleClickKey = (event) => {
@@ -61,8 +61,8 @@ function App() {
   return (
     <div className="App">
       <button onClick={handleClick}>New Game</button>
-      <Word word={word} guess={guess}/>
-      {buttons}      
+      <div className="characters">{buttons}</div>
+      <Word word={word} guess={guess} />
     </div>
   );
 }

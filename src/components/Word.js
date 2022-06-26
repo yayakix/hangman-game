@@ -15,11 +15,16 @@ function Word(props) {
     useEffect(() => {
       if (!prevGuesses.includes(props.guess)){
 setPrevGuesses((prevState) => {
-  return [...prevState, ` ${props.guess}`];
+  return [...prevState, ` ${props.guess},`];
 });
       }
         
     }, [props.guess]);
+      useEffect(() => {
+      
+      setPrevGuesses([])
+        
+      }, [props.word]);
   const [blankArray, setBlankArray] = useState([]);
 
   useEffect(() => {
@@ -53,7 +58,7 @@ setPrevGuesses((prevState) => {
 
   return (
     <div>
-      {/* <ul className="wordlist">{listItems}</ul> */}
+      <ul className="wordlist">Hint: {listItems}</ul>
       {blankArray}
       <br/>
       prev guesses:

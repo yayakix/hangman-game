@@ -13,6 +13,10 @@ function Game(props) {
       }
     }
   }, [props.guess]);
+
+    useEffect(() => {
+    setLives(10)
+    }, [props.word]);
   
 
   return <div>Lives left: {lives}
